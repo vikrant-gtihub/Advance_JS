@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Demo{
+            name = "mayur"
+           
+            constructor(name){
+                console.log(this.name)//to print default value of name
+                this.name = name
+                console.log(this.name)//to print the set value of name
+            }
+        }
+        let obj1 = new Demo()//undefined
+        let obj2 = new Demo('prayag')//prayag
+            
+    </script>
+</body>
+</html>
+<!-- 
+1.js me kisi ek object ke andar koi ek hi construtor ho sakta hai aur ye object ke initialization ke liye
+  use kiya jata hai.
+
+2.class ke andar kisi varibale ko banane ka syntax given hai
+-->

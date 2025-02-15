@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            setname(name){
+                this.name=name;
+            }
+            getname(){
+                return this.name
+            }
+            greeting(){
+                return 'hello user'
+            }
+        }
+        let s1 = new Student()
+        s1.setname('Vikrant Pandey')
+        console.log(s1.getname())
+        console.log(s1.greeting())
+    </script>
+</body>
+</html>
+<!-- 
+1.js me class ek blue print hai objects ke liye jitne bhi objects is student class ke banege un sab
+   sabke prototype me wo functions chale jayegne jo is class me define kiye gaye hain
+
+2.JS me object banane ka ek aur syntax bhi hai literals ke thorugh par jab hum same tarah ke bahut sare 
+  objects banana chahte hain to blueprint ka use karte hain yani ki class ka
+-->

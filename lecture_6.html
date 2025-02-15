@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+
+       class Parent{
+         constructor(age){
+            this.age=age
+            console.log('parent class constructor')
+         }
+         meth(){
+            console.log('parent specific method')
+         }
+       }
+
+       class Child extends Parent{
+        constructor(prmtr){
+            super(prmtr)
+            super.meth()
+            console.log('child class constructor')
+            this.name='child'
+         }
+       }
+       
+       let p1= new Parent()
+       console.log(p1)
+       let c1 = new Child('xyz_value')
+       console.log(c1) 
+    </script>
+    </body>
+</html>
+<!-- 
+1.js me jab bhi hum ek child class ka object banate hain to wo ek default constructor prapt karti hai js se
+  is constructor ke andar parent class ke constructor ko call kiya jata hai as ...super()...
+  par jab hum koi constructor ko child class me bana dete hain to phgir hume manually super() ko call karna
+  padta hai aur child class me ..this.. keyword ka use karnse se pahle kyuki this ka initialization ..super()..
+  ki call ke bagair nahi hota
+  
+2.super.. ek kewword hai jiske though parent ko refer kiya jata hai child class ke andar aur agar parent class
+  ke object ke reference se child class me kuchh bhi kam karna hai to hum child class me super ka hi use karte hain 
+-->

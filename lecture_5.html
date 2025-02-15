@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(){
+                this.age = 32
+            }
+            sleep(){
+                console.log('person is sleeping')
+            }
+            eat(){
+                console.log('person is eating')
+            }
+        }
+        class Engineer extends Person{
+             work(){
+                console.log('engineer is working to create a new website')
+             }
+             sleep(){
+                console.log('engineer is sleeping')
+             }
+        }
+        let p1 = new Person()
+        console.log(p1)
+
+        let e1 = new Engineer()
+        console.log(e1)
+        e1.eat()//person is eating
+        e1.sleep()//engineer is sleeping
+    </script>
+</body>
+</html>
+<!-- 
+1.js me bhi extends keyword ke through same tareeke se ek class dusre ko
+  inherit karti hai aur sabhi functions variable ka access kar leti hai.
+
+2.jab hum parent class ki method ko child class me redefine akrte hain aur jab wo method call hoti hai
+child class ke object se to child wali hi called hoti hai aur is concept ko kahte hain (method overriding)
+
+3.since ek default constructor har class ko js deti hai aur iski karan jab engineer class ka object 
+  bana to sabse pahli line me as usual super() called hua aur is wajah se child class ke andar bhi
+  age namak field generate ho gayi hai. 
+-->

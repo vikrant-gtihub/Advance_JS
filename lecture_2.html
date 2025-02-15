@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         //case.1
+        const obj={
+            function(){
+                console.log('greting everyone')
+            }
+        }
+         obj.function()//greeting everyone
+
+        
+
+         //case.2
+        const objOther={
+            name:'purohit'
+        }
+        objOther.__proto__= obj
+        objOther.function()
+
+        
+        //case.3
+        const obj3={
+            name:'rahul',
+            function(){
+                console.log('greeting everyone by rahul')
+            }
+        }
+        obj3.__proto__= obj
+        obj3.function()//greeting everyone by rahul
+    </script>
+</body>
+</html>
+<!-- 
+ case.1
+ kisi bhi js object ke andar function ko given tareeke se bhi define kar sakte hain
+
+ ...case.2...
+ agar kisi object ke andar kisi dusre object ki fucntionality (variables and methods) use karna chahte hain to
+ prototype me hum dusre object ko dal dete hain aur ab uski method inherti ho chuki hoti hai us object me bhi
+
+ ....case.3....
+ agar kisi object ke andar ek fucntion hai aur kisi dusre object ke function ko bhi prorotpye me liya gaya
+hai to hamesha object ke andar wala function hi execute hota hai
+-->

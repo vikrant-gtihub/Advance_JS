@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //example--1
+        const student={
+            name:'vikrant pandey',
+            age:21,
+            course:'computer science',
+            greet:function(){
+                console.log('hello my name is '+this.name)
+            }
+        }
+          console.log(student.__proto__)
+
+
+          
+          //example-2
+          const arr=[10,20,30]
+          console.log(arr.__proto__)
+
+
+    </script>
+</body>
+</html>
+<!-- 
+  ...example--1...
+  1..js me object ek collection hota hai properties and behaviours ka aur ek object ke andar uski hi field ko access karne
+  ke liye hume this keyword ka use karna hota hai meaning that it is pointed to current object
+ 
+  2.js me har ek object me ek default property js dwara di jati hai jiska na hai prototype aur iska type hai refernce of
+    an object   __proto__ se use access karte hain 
+
+   .....example-2....
+   jab hum arr ko dekhte hain ye ek object hai aur iske __proto__ ke andar mutiple methods hai jaise push()
+   pop() etc aur jab hum refeer karte hain arr.push() to since objects apne prototype object se kuchh kuchh 
+    methods aur properties inherti karti hain isi karan ye .push() method dekhne ko mili.
+
+-->
