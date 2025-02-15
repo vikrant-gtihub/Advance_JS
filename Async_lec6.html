@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        //case.1
+        let fun = async function(){}
+        // console.log(fun())
+
+       //isne ek promise return kiya js me hum kisi bhi normal function ko async 
+       // bana sakte hain and iske abd wo ek promise return akrne lagta hai
+
+
+
+        //case.2........async await chaining getalldata() ko call karne par ek ke bad ek promise
+        //  reolve karne par further lines execute hoti jayengi
+        let calling = function(data){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve()
+                   console.log(data)
+            },2000)
+            })
+        }
+
+        async function getalldata(){
+        try{
+            await calling('data1')
+            await calling('data2')
+            await calling('data3')
+            await calling('data4')
+          }
+          catch(err){
+          console.log(err)
+          }
+        } 
+        //getalldata()
+
+
+
+        //case.3 .......IIFE function ..ye aise function hai jinhe hum bascially ek hi bar execute karna 
+        // chahte hain aur ye jahahn par likhe jate hain wahin par execute ho jate hain inhe hum dubara 
+        // call bhi nahi kar sakte.. bat ye hai ki async await bina function ke nahi chalta kyuki async 
+        // ko ek function chahiye isliye humne getalldata() namak ek function likha jabki code ka is 
+        // fucntion me wrap karna anivarya nahi hona chahiye technically to uske liye use hote hain...
+        //  IIFE..function ye bhi functions hi hain inka syntax hota hai kuchh in teen tarah se 
+        //1. (function(){} or fat-arrow-function but any function should be anounmous)(..parenthesis for calling inplace)..
+        //2. async function can as well example (async ()={})()
+
+        (async function(){
+            try{
+            await calling('data1')
+            await calling('data2')
+            await calling('data3')
+            await calling('data4')
+          }
+          catch(err){
+          console.log(err)
+          }
+        })()
+    </script>
+    </body>
+</html>

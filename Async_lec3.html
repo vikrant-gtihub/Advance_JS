@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(data,callback){
+            setTimeout(function(){
+              console.log(data)
+              if(callback){
+                callback()
+              }
+              else{
+                console.log('in fourth iteration callback function is not defined')
+              }
+            },1000)
+        }
+        fun('val1',()=>{
+            console.log('val2 is being fetched....')
+            fun('val2',()=>{
+                console.log('val3 is being fetched...')
+                fun('val3',()=>{
+                    console.log('val4 is being fetched...')
+                    fun('val4')
+                })
+            })
+        })
+    </script>
+</body>
+</html>
+<!-- 
+1.to understand the flow of these codes you can resume the callback async await fucntions of apna college
+  this condition is called [callbackhell] when due to the nested callbacks the readibility and flow
+  of the code becomes very difficult to understand.
+
+2.callbacks useful hain js ke andar lekin jab kabhi callback hell ki condition aati hai to aise case me hum
+  promises ka use karte hain for which refer to Async_lec4.html file
+-->

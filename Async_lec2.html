@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //callback function example in synchronus coding 
+        function fun(a,b,callbackfunction){
+            callbackfunction(a,b)
+        }
+
+        fun(20,30,function(a,b){
+            console.log(a+b)
+        })
+
+
+        //asynchronus callback
+        function getdata(id,callbackfun){
+            setTimeout(function(){
+                if(id && callbackfun){
+                    console.log(id)
+                   callbackfun()
+                }
+                else{
+                    console.log('during second call of getdata id and callbackfun is not provided')
+                }
+            },1000)
+        }
+        getdata(10,getdata)
+    </script>
+</body>
+</html>
+
+<!-- 
+1.Jab bhi koi function callback accept karta hai, aap sirf us callback ko call karte hain.
+2.Callback ki actual logic implementation hamesha function call ke waqt likhi jaati hai.
+3.dry run the logic of asnchronus higher order function to explore the callback hell concept in next lecture
+-->

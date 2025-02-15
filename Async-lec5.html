@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //case.1...
+
+       /*
+       let promise1 = function(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+              resolve('promise resolved')
+            },2000)
+        })
+       } 
+       let result = promise1()
+        result.then(function(res){
+        console.log(res)
+       })
+
+       
+       let promise2 = function(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                  reject('promise rejected')
+            },2000)
+        })
+       }
+       let result2  = promise2()
+       result.catch(function(err){
+             console.log(err)
+       })
+*/
+
+
+       //case2.. solving a question jahan par hume har 2 second me data1 data2 data3 and so on 4 bar
+       //bar print karane hain..
+       let promisefunction = function(data){
+        return new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+              resolve(data)
+            },1500)
+        })
+       }          
+      
+       promisefunction('data1').then((res)=>{
+        console.log(res)
+        return promisefunction('data2')
+       }).then((res)=>{
+        console.log(res)
+        return promisefunction('data3')
+       }).then((res)=>{
+        console.log(res)
+        return promisefunction('data4')
+       }).then((res)=>{
+        console.log(res)
+       })
+    </script>
+</body>
+</html>
+<!-- 
+  1._case.1... me humne handling of promise dekh li hai yahan par jab ek prmomise object return hota hai
+  to use variable me save kar liya jata hai aur ab after the interval ya to promise resolve hota hai
+   ya reject hota hai yadi resolve hota hai to .then() chalta hai jiske andar ek callback me result aata
+   hai matlab ki promise ke andar ab jo result aa gaya hoga aur jab error aata hai tab .catch() chalata hai
+   aur iske andar ek function hai jiske andar ek error aata hai jo ki promise code ke implementation ke
+    time pe send kiya gaya tha
+
+ 2.case.2 .. ko promise chaninign kahte hain aur ye calback hell ko reslve karne ka tareeka hai aur ye bhi 
+    jyada complicated ho jata hai sometimes to uske liye agle lecture me humne async await use kiya hai
+
+
+    Note...it it recommended ki is file me har case ko seperately uncomment karke console ka output dekhe
+    taki crash n ho cheejen
+-->

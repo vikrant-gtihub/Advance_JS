@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //    example.1
+       let promise1 = new Promise((resolve,reject)=>{
+          resolve('promise resolved successfully')
+        })
+        console.log(promise1)
+
+        let promise2 = new Promise((resolve,reject)=>{
+            reject('promises rejected')
+        })
+
+        //example.2
+        function promise3(){
+          return new Promise((resolve,reject)=>{
+                setTimeout(function(){
+                   resolve('promise3 is resolved')
+                },2000)
+            })
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+........................EXAMPLE____1................................................................
+1.js ek andar promise ek object hota hai jiski teen states hoti hain pending jiska matlab hai ki result
+   undefined hai, resolved jiska matlab hai ki result aa chuka hai aur rejected matlab ki result me error
+   aa gaya hai
+
+2.promise ki by default state pending hoti hai and result undefined hota hai
+
+3.generally programming ke andar hum khud se promises nahi create karte hain but just for understanding humne
+  Promise class se use create kiya ye callback me do functions accept karta hai resolve jo ki call karke
+  hum apna promise resolve kara sakte hain aur iska parameter me hum wo data bhejet hain jo hum promise
+  resolve hone par result me dekhna chahte hain and in the agar hum ..reject().. call karte hain to promise
+  reject ho jata hai aur iske parenthesis me bheja hua content result me error ke roop me samne aata hai sur
+  promise ki state reject ho jati hai
+
+
+  ............................EXAMPLE____2..................................................
+  generally jab hum kisi api etc ko call karte hain aur wo promise return karte hain to wo example number.2
+  me likhe concept ka use karte hain jab hum aise cases ,me promise3() ko console par run karte hain to 
+  immediate ek promise return  hota hai jiski state pending hoti hai aur ek settimeout statrt ho jata hai 
+  aur jaise hi promise pura hota hai state badal jati hai aur ab hum ise console par promise3() se dekh bhi
+  sakte hain.
+
+  Note___Async_lec_5 me hum dekhte hain ki kaise promise resolve ya reject hone ke bad kisi code ko execute 
+          karna  hai
+-->
