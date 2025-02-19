@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <img style="display: block; margin-bottom: 20px; height: 400px;" src alt>
+        <button
+            style="background-color: royalblue; color: white; padding: 10px 15px; font-size: 20px;">call
+            api</button>
+
+        
+        
+        <script>
+
+        //api call using async await 
+        async function callApi(){
+        let response = await fetch('https://dog.ceo/api/breeds/image/random')
+        let data = await response.json()
+        document.querySelector('img').setAttribute('src',data.message)
+      }
+        document.querySelector('button').addEventListener('click',callApi)
+
+        
+        //api call using chaining such as async await
+        fetch('https://dog.ceo/api/breeds/image/random').then((response)=>{
+            return response.json()
+        }).then((data)=>{
+            console.log(data)
+        })
+    </script>
+    </body>
+</html>
+<!-- 
+1.api wahi routes hain backend ke jo ki kisi request ke aane par response dete hain inhe end-points bhi kahte hain
+2.fetch().. ke js ka function hai jo ki ek api..request karta hai aur response deta hai since response readable
+  format me nahi hota so hum use response.json() ka diya taki wo json[bascially dataka ek format hota hai jisme]
+  aaj ki tarikh me data transfer hota hai jaise pahle AJAX ek form tha
+3.fetch se data aana aur use json format me convert karna dono hi asynchronus task hai isliye async await ka use hua
+-->
